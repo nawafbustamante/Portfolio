@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Nawaf Bustamante | Virtual Assistants</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="icon" type="image/jpg" href="profile.jpg">
 <style>
   :root {
@@ -35,63 +35,112 @@
 
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: flex-start; justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: rgba(250,247,242,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    position: fixed; top: 1.1rem; left: 50%; transform: translateX(-50%);
+    z-index: 100;
+    width: calc(100% - 3rem);
+    max-width: 900px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 1.2rem 0.75rem 1.5rem;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    border-radius: 999px;
+    box-shadow: 0 4px 32px rgba(28,26,24,0.10), 0 1px 4px rgba(28,26,24,0.06);
+    border: 1px solid rgba(107,79,58,0.10);
   }
   .nav-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
     gap: 0.5rem;
   }
 
   .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-family: 'Oleo Script', cursive;
+    font-size: 1.15rem;
     color: var(--charcoal);
     text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    white-space: nowrap;
+  }
+  .nav-logo-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold);
+    display: inline-block; flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(201,146,59,0.18), 0 0 10px 4px rgba(201,146,59,0.22);
   }
   .nav-logo em { color: var(--gold); font-style: italic; }
 
-  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
   .nav-links a {
-    text-decoration: none; font-size: 0.88rem; font-weight: 500;
-    color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    color: var(--charcoal); letter-spacing: 0.01em;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
 
   .nav-cta {
-    background: var(--charcoal); color: var(--cream) !important;
-    padding: 0.55rem 1.4rem; border-radius: 2rem; font-weight: 500 !important;
-    transition: background 0.2s !important;
+    background: var(--gold); color: #fff !important;
+    padding: 0.6rem 1.5rem; border-radius: 999px; font-weight: 600 !important;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.2s !important;
+    white-space: nowrap;
   }
-  .nav-cta:hover { background: var(--gold) !important; color: var(--charcoal) !important; }
+  .nav-cta:hover { background: var(--charcoal) !important; color: #fff !important; transform: translateY(-1px); }
 
   .badge-available {
-    font-size: 0.82rem; color: var(--sage); font-weight: 600;
+    font-size: 0.82rem; color: var(--charcoal); font-weight: 600;
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(140,168,156,0.12); border: 1px solid rgba(140,168,156,0.35);
+    background: rgba(201,146,59,0.08); border: 1px solid var(--gold);
     padding: 0.35rem 1rem; border-radius: 2rem;
     margin-bottom: 1.4rem; width: fit-content;
   }
-  .badge-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--sage); animation: pulse 2s infinite;
+  .badge-star-wrap {
+    position: relative;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px;
   }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .badge-star-wrap::before {
+    content: '';
+    position: absolute;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(201,146,59,0.35);
+    box-shadow: 0 0 0 4px rgba(201,146,59,0.10), 0 0 10px 4px rgba(201,146,59,0.12);
+    animation: shadowPulse 2s ease-in-out infinite;
+    z-index: 0;
+  }
+  .badge-star-icon {
+    position: relative; z-index: 1;
+    font-size: 0.95rem; line-height: 1;
+    filter: drop-shadow(0 0 4px rgba(255,220,100,0.95)) drop-shadow(0 0 8px rgba(201,146,59,0.85));
+    animation: starGlow 2s ease-in-out infinite;
+  }
+  @keyframes starGlow {
+    0%,100% { filter: drop-shadow(0 0 2px rgba(255,220,100,0.6)) drop-shadow(0 0 4px rgba(201,146,59,0.4)); }
+    50% { filter: drop-shadow(0 0 4px rgba(255,230,120,0.8)) drop-shadow(0 0 8px rgba(201,146,59,0.5)); }
+  }
+  @keyframes shadowPulse {
+    0%,100% { transform: scale(1); opacity: 0.8; box-shadow: 0 0 0 4px rgba(201,146,59,0.10), 0 0 10px 4px rgba(201,146,59,0.12); }
+    50% { transform: scale(1.3); opacity: 0.5; box-shadow: 0 0 0 8px rgba(201,146,59,0.05), 0 0 16px 6px rgba(201,146,59,0.08); }
+  }
 
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; gap: 4rem;
-    padding: 8rem 5rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9rem 2rem 5rem;
     position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
   }
 
   .hero::before {
@@ -123,7 +172,6 @@
   }
   .hero-title em {
     font-style: italic; color: var(--gold);
-    display: block;
   }
 
   .hero-sub {
@@ -159,16 +207,24 @@
 
   /* hero image */
   .hero-img-wrap {
-    position: relative; display: flex; justify-content: center; align-items: center;
-    padding: 14px;
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+  }
+  .hero-img-inner {
+    position: relative;
+    width: 340px;
+    height: 420px;
+    display: flex; justify-content: center; align-items: center;
+    flex-shrink: 0;
   }
   .hero-img-bg {
     position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-3deg);
     width: 340px;
     height: 420px;
     border-radius: 28px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--rose) 100%);
-    transform: rotate(-3deg);
     z-index: 0;
   }
   .hero-img-frame {
@@ -184,6 +240,36 @@
     width: 100%; height: 100%; object-fit: cover;
     display: block;
     border-radius: 0;
+  }
+
+  /* floating label on hero image */
+  .hero-img-label {
+    position: absolute;
+    bottom: -10px; right: -18px;
+    z-index: 3;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 6px 24px rgba(201,146,59,0.4), 0 2px 8px rgba(28,26,24,0.15);
+    display: flex; align-items: center; justify-content: center;
+    animation: floatLabel 3s ease-in-out infinite;
+    min-width: 160px;
+  }
+  .hero-img-label-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--charcoal); line-height: 1.3;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+  @keyframes floatLabel {
+    0%,100% { transform: translateY(0px); box-shadow: 0 6px 24px rgba(201,146,59,0.4), 0 2px 8px rgba(28,26,24,0.15); }
+    50%      { transform: translateY(-8px); box-shadow: 0 14px 32px rgba(201,146,59,0.35), 0 4px 12px rgba(28,26,24,0.10); }
+  }
+  @keyframes livePulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+    50%     { box-shadow: 0 0 0 5px rgba(255,255,255,0); }
   }
 
   /* placeholder if no real photo */
@@ -204,20 +290,30 @@
   .hero-img-desktop { display: flex; }
 
   /* ── SECTIONS SHARED ── */
-  section { padding: 5rem 5rem; }
+  section { padding: 5rem 2rem; }
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
   .section-label {
     font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+    text-align: center;
   }
   .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 3vw, 2.8rem);
     font-weight: 700; color: var(--charcoal);
     margin-bottom: 1rem;
+    text-align: center;
   }
   .section-sub {
     color: var(--muted); font-size: 1rem; max-width: 520px; font-weight: 300;
     margin-bottom: 3rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
@@ -272,7 +368,12 @@
     background: rgba(201,146,59,0.1); border-color: rgba(201,146,59,0.3);
     transform: translateY(-4px);
   }
-  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-icon { 
+    width: 54px; height: 54px; border-radius: 0.75rem;
+    background: rgba(232,185,106,0.15); 
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
   .service-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 0.6rem; }
   .service-desc { color: rgba(250,247,242,0.55); font-size: 0.92rem; font-weight: 300; }
 
@@ -312,8 +413,35 @@
   .contact-item-icon { font-size: 1.3rem; }
   .contact-item-label { font-size: 0.8rem; color: var(--muted); font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; }
   .contact-item-val { font-weight: 500; font-size: 0.95rem; color: var(--charcoal); }
+  .btn-download-cv {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--charcoal); color: var(--cream);
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    border-radius: 2rem; text-decoration: none;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
+    letter-spacing: 0.02em;
+    width: fit-content;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-download-cv:hover,
+  .btn-download-cv:active,
+  .btn-download-cv.clicked {
+    background: var(--gold); color: var(--charcoal);
+    transform: translateY(-2px);
+  }
+  .btn-download-cv-icon { font-size: 1rem; line-height: 1; }
 
-  .contact-form { }
+  .contact-form {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 1.4rem;
+    padding: 2.2rem 2.2rem 2rem;
+    box-shadow: 0 4px 32px rgba(28,26,24,0.07);
+  }
   .form-group { margin-bottom: 1.2rem; }
   label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--muted); margin-bottom: 0.4rem; letter-spacing: 0.05em; text-transform: uppercase; }
   input, textarea, select {
@@ -373,13 +501,13 @@
   .mobile-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 10px);
     right: 0;
     width: 200px;
-    background: rgba(250,247,242,0.98);
+    background: rgba(255,255,255,0.98);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border);
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     flex-direction: column;
     padding: 0.5rem;
     z-index: 99;
@@ -404,18 +532,24 @@
   }
   .mobile-cta:hover { background: var(--gold) !important; color: var(--charcoal) !important; }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+    nav {
+      top: 0.75rem;
+      width: calc(100% - 2rem);
+      padding: 0.65rem 1rem 0.65rem 1.2rem;
+      border-radius: 999px;
+    }
     .nav-links { display: none; }
-    .nav-right { flex-direction: row; align-items: center; gap: 0; }
+    .nav-right { flex-direction: row; align-items: center; gap: 0.5rem; }
     .desktop-badge { display: none; }
     .hamburger { display: flex; }
 
     .hero {
-      grid-template-columns: 1fr;
       padding: 7rem 1.5rem 4rem;
-      text-align: center;
+    }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: left;
       gap: 2.5rem;
     }
     .hero-text { order: 1; }
@@ -424,18 +558,28 @@
       display: flex !important;
       justify-content: center;
     }
-    .hero-img-bg { border-radius: 22px; width: 220px; height: 280px; }
+    .hero-img-wrap { justify-content: center; }
+    .hero-img-inner { width: 220px; height: 280px; }
+    .hero-img-bg { width: 220px; height: 280px; border-radius: 22px; transform: translate(-50%, -50%) rotate(-3deg); }
     .hero-img-frame { width: 200px; height: 260px; border-radius: 18px; }
     .hero-img { border-radius: 0; }
     .hero-img-placeholder { width: 200px; height: 260px; border-radius: 18px; }
-    .hero-btns { justify-content: center; }
-    .hero-tags { justify-content: center; }
-    .hero-sub { margin: 0 auto 2.4rem; }
+    .hero-btns { justify-content: flex-start; }
+    .hero-btns .btn-primary,
+    .hero-btns .btn-outline {
+      padding: 0.9rem 2rem;
+      border-radius: 2rem;
+      font-size: 0.95rem;
+      min-width: 0;
+      text-align: center;
+    }
+    .hero-tags { justify-content: flex-start; }
+    .hero-sub { margin: 0 0 2.4rem; }
     .badge-available { margin-left: 0; align-self: flex-start; text-align: left; }
     .hero-img-mobile { display: flex; margin-top: 2rem; }
     .hero-img-desktop { display: none !important; }
 
-    section { padding: 3.5rem 1.5rem; }
+    section { padding: 3.5rem 1rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .services-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
@@ -453,7 +597,6 @@
       <li><a href="#about" onclick="closeMenu()">About</a></li>
       <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
       <li><a href="#services" onclick="closeMenu()">Services</a></li>
-      <li><a href="#process" onclick="closeMenu()">Process</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Hire Me</a></li>
     </ul>
@@ -465,7 +608,6 @@
       <a href="#about" onclick="closeMenu()">About</a>
       <a href="#experience" onclick="closeMenu()">Experience</a>
       <a href="#services" onclick="closeMenu()">Services</a>
-      <a href="#process" onclick="closeMenu()">Process</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
       <a href="#contact" class="mobile-cta" onclick="closeMenu()">✨ Hire Me</a>
     </div>
@@ -475,8 +617,9 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="hero-inner">
   <div class="hero-text">
-    <div class="badge-available fade-in"><div class="badge-dot"></div>✨ Available for new clients</div>
+    <div class="badge-available fade-in"><span class="badge-star-wrap"><span class="badge-star-icon">✨</span></span> Available for clients</div>
     <h1 class="hero-title fade-in">
       Helping CEOs & Business Owners Generate
       <em>More Qualified Appointments</em>
@@ -486,38 +629,47 @@
       <a href="#contact" class="btn-primary">Book a Discovery Call</a>
       <a href="#contact" class="btn-outline">Hire Me Today</a>
     </div>
-    <div class="hero-tags">
-      <span class="tag">📞 Cold Calling</span>
-      <span class="tag">📅 Appointment Setting</span>
-      <span class="tag">🎯 Lead Generation</span>
-      <span class="tag">💬 Objection Handling</span>
-    </div>
+
     <!-- Mobile-only image (below tags on mobile) -->
     <div class="hero-img-wrap hero-img-mobile">
-      <div class="hero-img-bg"></div>
-      <div class="hero-img-frame">
-        <img src="profile.jpg" alt="" class="hero-img"/>
+      <div class="hero-img-inner">
+        <div class="hero-img-bg"></div>
+        <div class="hero-img-frame">
+          <img src="profile.jpg" alt="" class="hero-img"/>
+        </div>
+        <div class="hero-img-label">
+          <div class="hero-img-label-text">Executive Assistants</div>
+        </div>
       </div>
     </div>
   </div>
   <!-- Desktop-only image (right column on desktop) -->
   <div class="hero-img-wrap hero-img-desktop">
-    <div class="hero-img-bg"></div>
-    <div class="hero-img-frame">
-      <img src="profile.jpg" alt="" class="hero-img"/>
+    <div class="hero-img-inner">
+      <div class="hero-img-bg"></div>
+      <div class="hero-img-frame">
+        <img src="profile.jpg" alt="" class="hero-img"/>
+      </div>
+      <div class="hero-img-label">
+          <div class="hero-img-label-text">Executive Assistants</div>
+        </div>
     </div>
   </div>
+    </div>
+  </div>
+  </div><!-- /.hero-inner -->
 </section>
 
 <hr class="divider"/>
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="section-inner">
   <div class="about-grid">
     <div class="about-text">
       <div class="section-label">About Me</div>
       <h2 class="section-title">Your Partner in<br/>Business Growth</h2>
-      <p>Hi, I'm <strong>Nawaf Bustamante</strong> — a dedicated Appointment Setter and Cold Caller with a passion for helping businesses scale their sales pipeline.</p>
+      <p>Hi, I'm <strong>Nawaf Bustamante</strong>, a dedicated Appointment Setter and Cold Caller with a passion for helping businesses scale their sales pipeline.</p>
       <p>I specialize in connecting businesses with their ideal clients through <strong>strategic outbound calling, lead qualification, and consistent follow-up</strong>. My goal is simple: fill your calendar with quality appointments so you can focus on closing deals.</p>
       <p>With a proven track record in outbound sales and client engagement, I bring energy, professionalism, and results to every campaign I take on.</p>
     </div>
@@ -540,125 +692,94 @@
       </div>
     </div>
   </div>
+  </div><!-- /.section-inner -->
 </section>
 
 <hr class="divider"/>
 
 <!-- EXPERIENCE -->
 <section id="experience">
+  <div class="section-inner">
   <div class="section-label">Experience</div>
   <h2 class="section-title">Work History</h2>
-  <p class="section-sub">A track record of delivering real results across industries through dedicated outbound sales work.</p>
+  <p class="section-sub">A track record of delivering real results across industries through dedicated inbound work.</p>
   <div class="exp-grid">
     <div class="exp-card">
-      <div class="exp-icon">📅</div>
+      <div class="exp-icon">🎧</div>
       <div>
-        <div class="exp-role">Senior Appointment Setter</div>
-        <div class="exp-company">Real Estate Investment Firm</div>
-        <div class="exp-period">2022 – Present</div>
-        <div class="exp-desc">Cold calling motivated sellers, qualifying leads, and setting appointments for acquisitions team. Consistently exceeded weekly appointment targets by 30%.</div>
-      </div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-icon">📞</div>
-      <div>
-        <div class="exp-role">Cold Caller / SDR</div>
-        <div class="exp-company">Digital Marketing Agency</div>
-        <div class="exp-period">2021 – 2022</div>
-        <div class="exp-desc">Prospected and qualified small business owners for digital marketing services. Built scripts, handled objections, and coordinated handoffs to the sales team.</div>
-      </div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-icon">🎯</div>
-      <div>
-        <div class="exp-role">Lead Generation Specialist</div>
-        <div class="exp-company">B2B SaaS Company</div>
-        <div class="exp-period">2020 – 2021</div>
-        <div class="exp-desc">Managed outbound campaigns targeting decision-makers. Utilized CRM tools to track pipeline and ensure consistent follow-up cadence across all prospects.</div>
+        <div class="exp-role">Awesome CX</div>
+        <div class="exp-company">TechStyle / Fabletics</div>
+        <div class="exp-period">October 2025 – February 2026</div>
+        <div class="exp-desc">Worked as a call center agent for the TechStyle/Fabletics account, handling customer concerns such as orders, memberships, billing, and account issues. Managed both calls and chats while providing clear and helpful support. Gained strong communication skills, patience, and the ability to handle different types of customers professionally.</div>
       </div>
     </div>
   </div>
+  </div><!-- /.section-inner -->
 </section>
 
 <hr class="divider"/>
 
 <!-- SERVICES -->
 <section id="services">
+  <div class="section-inner">
   <div class="section-label">Services</div>
   <h2 class="section-title">What I Offer</h2>
-  <p class="section-sub">Comprehensive outbound sales services designed to fill your pipeline with quality, pre-qualified appointments.</p>
+  <p class="section-sub">Comprehensive administrative support tailored to streamline your business operations.</p>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">📞</div>
-      <div class="service-title">Cold Calling</div>
-      <div class="service-desc">High-volume outbound calls to your target market using proven scripts and objection-handling techniques to open doors.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="7" y="14" width="3" height="3" fill="#E8B96A" stroke="none"/></svg>
+      </div>
+      <div class="service-title">Calendar & Schedule Management</div>
+      <div class="service-desc">Organize appointments, meetings, and deadlines to ensure optimal time management and productivity.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">📅</div>
-      <div class="service-title">Appointment Setting</div>
-      <div class="service-desc">Qualifying prospects and booking them directly into your calendar — only real buyers, no time-wasters.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+      <div class="service-title">Email & Inbox Management</div>
+      <div class="service-desc">Filter, prioritize, and respond to emails to maintain a clean and organized inbox.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🎯</div>
-      <div class="service-title">Lead Generation</div>
-      <div class="service-desc">Building targeted prospect lists and executing multi-touch outreach sequences to generate a steady flow of leads.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v5c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 10v5c0 1.66 4 3 9 3s9-1.34 9-3v-5"/><path d="M3 15v4c0 1.66 4 3 9 3s9-1.34 9-3v-4"/></svg>
+      </div>
+      <div class="service-title">Data Entry & Document Organization</div>
+      <div class="service-desc">Accurate data entry and systematic document organization for easy retrieval and reference.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">💬</div>
-      <div class="service-title">Objection Handling</div>
-      <div class="service-desc">Turning "not interested" into conversations through empathetic, consultative dialogue that earns trust fast.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="service-title">Meeting Coordination</div>
+      <div class="service-desc">Schedule, coordinate, and manage meetings and appointments with precision and professionalism.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🔄</div>
-      <div class="service-title">Follow-Up Campaigns</div>
-      <div class="service-desc">Persistent, strategic follow-up to re-engage cold leads and warm prospects until they're ready to move forward.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="rgba(232,185,106,0.2)"/></svg>
+      </div>
+      <div class="service-title">File Management & Admin Support</div>
+      <div class="service-desc">Maintain organized file systems and provide comprehensive administrative assistance.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">📊</div>
-      <div class="service-title">CRM Management</div>
-      <div class="service-desc">Keeping your pipeline organized, tracking every touchpoint, and providing regular performance reports.</div>
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="rgba(232,185,106,0.2)"/></svg>
+      </div>
+      <div class="service-title">Customer Communication</div>
+      <div class="service-desc">Handle follow-ups and customer inquiries with professionalism and timely responses.</div>
     </div>
   </div>
-</section>
-
-<hr class="divider"/>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-label">My Process</div>
-  <h2 class="section-title">How It Works</h2>
-  <p class="section-sub">A simple, transparent process to get qualified appointments on your calendar fast.</p>
-  <div class="process-steps">
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <div class="step-title">Discovery Call</div>
-      <div class="step-desc">We discuss your target market, offer, and goals so I understand exactly who to contact.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <div class="step-title">Script & Strategy</div>
-      <div class="step-desc">I craft a customized call script and outreach strategy tailored to your business.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <div class="step-title">Outreach Begins</div>
-      <div class="step-desc">Daily calling, follow-ups, and CRM updates. You stay informed every step of the way.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-num">4</div>
-      <div class="step-title">Results & Optimize</div>
-      <div class="step-desc">Regular reports, performance reviews, and continuous improvement to maximize conversions.</div>
-    </div>
-  </div>
+  </div><!-- /.section-inner -->
 </section>
 
 <hr class="divider"/>
 
 <!-- CONTACT -->
 <section id="contact">
+  <div class="section-inner">
   <div class="section-label">Contact</div>
   <h2 class="section-title">Let's Work Together</h2>
-  <p class="section-sub">Ready to fill your calendar with qualified appointments? Get in touch and let's talk about your goals.</p>
+  <p class="section-sub">Ready to streamline your business operations? Let's discuss how I can support your goals.</p>
   <div class="contact-grid">
     <div class="contact-info">
       <a href="mailto:nawafbustamante@gmail.com" class="contact-item">
@@ -675,44 +796,41 @@
           <div class="contact-item-val">linkedin.com/in/nawafbustamante</div>
         </div>
       </a>
-      <a href="#" class="contact-item">
+      <a href="https://www.facebook.com/share/1HLNZUcXPk/" target="_blank" class="contact-item">
+        <span class="contact-item-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.883v2.258h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        </span>
+        <div>
+          <div class="contact-item-label">Facebook</div>
+          <div class="contact-item-val">facebook.com/nawafbustamante</div>
+        </div>
+      </a>
+      <a href="https://wa.me/639263826232" target="_blank" class="contact-item">
         <span class="contact-item-icon">📲</span>
         <div>
           <div class="contact-item-label">WhatsApp / Telegram</div>
           <div class="contact-item-val">+63 926 382 6232</div>
         </div>
       </a>
-      <div class="contact-item" style="cursor:default;">
-        <span class="contact-item-icon">🕐</span>
-        <div>
-          <div class="contact-item-label">Availability</div>
-          <div class="contact-item-val">Mon–Fri, 11AM–11PM PHT</div>
-        </div>
+      <div style="display:flex; justify-content:center; width:100%;">
+        <a href="https://drive.google.com/file/d/1zHr70tapD89_pmqXTUs87OobxGcu3Uht/view?usp=drive_link" target="_blank" class="btn-download-cv" id="download-cv-btn" onclick="handleDownloadCV(this)">
+          Download CV →
+        </a>
       </div>
     </div>
      <div class="contact-form">
       <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" id="f-name" placeholder="John Smith"/>
+        <label>First Name</label>
+        <input type="text" id="f-name" placeholder="Your name"/>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" id="f-email" placeholder="john@company.com"/>
+        <input type="email" id="f-email" placeholder="your@email.com"/>
       </div>
+
       <div class="form-group">
-        <label>What do you need help with?</label>
-        <select id="f-service">
-          <option value="">Select a service…</option>
-          <option>Cold Calling</option>
-          <option>Appointment Setting</option>
-          <option>Lead Generation</option>
-          <option>Follow-Up Campaigns</option>
-          <option>Full Outbound Package</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Tell me about your project</label>
-        <textarea id="f-message" placeholder="Describe your business, target market, and what results you're looking for…"></textarea>
+        <label>Message</label>
+        <textarea id="f-message" placeholder="Type your message here..."></textarea>
       </div>
       <div id="form-success" style="display:none; background:rgba(140,168,156,0.15); border:1px solid var(--sage); border-radius:0.8rem; padding:1.2rem 1.5rem; margin-bottom:1.2rem; color:var(--sage); font-weight:500; text-align:center;">
         ✅ Message sent! Nawaf will get back to you soon.
@@ -726,7 +844,6 @@
       async function submitForm() {
         const name    = document.getElementById("f-name").value.trim();
         const email   = document.getElementById("f-email").value.trim();
-        const service = document.getElementById("f-service").value;
         const message = document.getElementById("f-message").value.trim();
         const btn     = document.getElementById("submit-btn");
         const success = document.getElementById("form-success");
@@ -746,14 +863,13 @@
           const res = await fetch("https://formspree.io/f/xpqnyzkb", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ name, email, service, message })
+            body: JSON.stringify({ name, email, message })
           });
  
           if (res.ok) {
             success.style.display = "block";
             document.getElementById("f-name").value = "";
             document.getElementById("f-email").value = "";
-            document.getElementById("f-service").value = "";
             document.getElementById("f-message").value = "";
             btn.textContent = "Message Sent ✅";
           } else {
@@ -769,6 +885,7 @@
       }
     </script>
   </div>
+  </div><!-- /.section-inner -->
 </section>
 
 <script>
@@ -791,6 +908,11 @@
       btn.classList.remove("open");
     }
   });
+
+  function handleDownloadCV(el) {
+    el.classList.add("clicked");
+    setTimeout(() => el.classList.remove("clicked"), 600);
+  }
 </script>
 
 <!-- FOOTER -->
