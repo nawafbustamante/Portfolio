@@ -323,11 +323,29 @@
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
   .stat-card {
     background: var(--cream); border: 1px solid var(--border);
-    border-radius: 1rem; padding: 1.5rem;
-    text-align: center;
+    border-radius: 1rem; padding: 1.5rem 1.4rem;
+    text-align: left;
+    transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
   }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); font-weight: 700; }
-  .stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+  .stat-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 6px 28px rgba(201,146,59,0.13);
+    transform: translateY(-3px);
+  }
+  .stat-icon {
+    width: 42px; height: 42px; border-radius: 0.65rem;
+    background: linear-gradient(135deg, rgba(201,146,59,0.15) 0%, rgba(212,137,122,0.12) 100%);
+    border: 1px solid rgba(201,146,59,0.22);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.9rem;
+  }
+  .stat-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--charcoal); line-height: 1.35;
+    margin-bottom: 0.18rem;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
 
   .about-text p { color: var(--muted); font-size: 1rem; font-weight: 300; margin-bottom: 1rem; }
   .about-text p strong { color: var(--charcoal); font-weight: 600; }
@@ -674,21 +692,48 @@
       <p>With a proven track record in outbound sales and client engagement, I bring energy, professionalism, and results to every campaign I take on.</p>
     </div>
     <div class="about-stats">
+      <!-- Card 1: Call Center Trained -->
       <div class="stat-card">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Appointments Set</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div class="stat-num">Call Center Trained</div>
+        <div class="stat-label">Customer Service Pro</div>
       </div>
+      <!-- Card 2: 100% Remote Ready -->
       <div class="stat-card">
-        <div class="stat-num">95%</div>
-        <div class="stat-label">Show-Up Rate</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Remote Ready</div>
       </div>
+      <!-- Card 3: Flexible Hours -->
       <div class="stat-card">
-        <div class="stat-num">3+</div>
-        <div class="stat-label">Years Experience</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="stat-num">Flexible Hours</div>
+        <div class="stat-label">Part-time Ready</div>
       </div>
+      <!-- Card 4: Reliable Support -->
       <div class="stat-card">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Satisfied Clients</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="stat-num">Reliable Support</div>
+        <div class="stat-label">Always Responsive</div>
       </div>
     </div>
   </div>
