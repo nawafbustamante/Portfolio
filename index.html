@@ -377,6 +377,9 @@
 
   /* ── SERVICES ── */
   #services { background: var(--charcoal); }
+  .about-heading {
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  }
   #services .section-title { color: var(--cream); }
   #services .section-sub { color: rgba(250,247,242,0.5); }
   #services .section-label { color: var(--gold-light); }
@@ -397,7 +400,7 @@
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1rem;
   }
-  .service-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 0.6rem; }
+  .service-title { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 400; color: var(--cream); margin-bottom: 0.6rem; }
   .service-desc { color: rgba(250,247,242,0.55); font-size: 0.92rem; font-weight: 300; }
 
   /* ── PROCESS ── */
@@ -609,6 +612,7 @@
 
     section { padding: 3.5rem 1rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-heading { font-size: clamp(1.25rem, 5.5vw, 1.6rem); }
     .services-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .process-steps::before { display: none; }
@@ -696,10 +700,10 @@
   <div class="about-grid">
     <div class="about-text">
       <div class="section-label">About Me</div>
-      <h2 class="section-title">Your Dedicated Support<br/>Behind Every Productive Day</h2>
-      <p>Hi, I'm <strong>Nawaf Bustamante</strong>, a dedicated Executive Assistant with a passion for helping busy professionals and business owners take back control of their time and energy.</p>
-      <p>I specialize in keeping things organized and running smoothly from managing calendars, emails, and documents to coordinating meetings and handling day-to-day administrative tasks. My goal is simple: take the load off your plate so you can focus on what truly matters leading and growing your business.</p>
-      <p>With a strong background in customer service and communication, I bring reliability, attention to detail, and a proactive mindset to everything I do. When you work with me, you get more than just an assistant you get a dependable partner who keeps your business on track, every single day.</p>
+      <h2 class="section-title about-heading">Your Dedicated Support<br/><span style="white-space:nowrap;">Behind Every Productive Day</span></h2>
+      <p>Hi, I'm <strong>Nawaf Bustamante</strong>, a dedicated Executive Assistant passionate about helping busy professionals and business owners take back control of their time.</p>
+      <p>I specialize in calendar management, email handling, data entry, meeting coordination, and day-to-day administrative support so you can stay focused on what truly matters.</p>
+      <p>I bring reliability, attention to detail, and a proactive mindset to every task. When you work with me, you get a dependable partner who keeps your business organized and running smoothly.</p>
     </div>
     <div class="about-stats">
       <!-- Card 1: Call Center Trained -->
