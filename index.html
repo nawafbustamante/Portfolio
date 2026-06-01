@@ -699,6 +699,30 @@
     .services-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .process-steps::before { display: none; }
+    .contact-btns-wrap {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .contact-btns-wrap .btn-discovery-contact,
+    .contact-btns-wrap .btn-download-cv {
+      width: 100% !important;
+      max-width: 280px !important;
+      justify-content: center !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+  }
+  .btn-discovery-contact {
+    background: var(--charcoal) !important;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .btn-discovery-contact:hover {
+    background: var(--gold) !important;
+    box-shadow: 0 8px 28px rgba(28,26,24,0.25) !important;
+  }
+  .btn-discovery-contact:active {
+    background: var(--brown) !important;
   }
 </style>
 </head>
@@ -986,10 +1010,9 @@
           <div class="contact-item-val">+63 926 382 6232</div>
         </div>
       </div>
-      <div style="display:flex; justify-content:center; width:100%;">
-        <a href="https://drive.google.com/file/d/1U4N7q6JKISvAvAhM9B9-XhodD0nxiLIM/view?usp=sharing" target="_blank" class="btn-download-cv" id="download-cv-btn" onclick="handleDownloadCV(this)">
-          Download CV →
-        </a>
+      <div class="contact-btns-wrap" style="display:flex; justify-content:center; align-items:center; gap:1rem; width:100%; margin-top:0.5rem;">
+        <a href="#contact" class="btn-primary btn-discovery-contact"><span class="btn-text">Book a Discovery Call</span><span class="btn-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="https://drive.google.com/file/d/1U4N7q6JKISvAvAhM9B9-XhodD0nxiLIM/view?usp=sharing" target="_blank" class="btn-download-cv" id="download-cv-btn" onclick="handleDownloadCV(this)" style="margin-top:0; white-space:nowrap;">Download CV</a>
       </div>
     </div>
      <div class="contact-form">
