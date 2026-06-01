@@ -657,6 +657,14 @@
     .desktop-badge { display: none; }
     .hamburger { display: flex; }
 
+    /* Fix gradient so it covers the full hero on mobile */
+    .hero::before {
+      top: 0; right: 0; bottom: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse at 70% 20%, rgba(201,146,59,0.13) 0%, transparent 55%),
+                  radial-gradient(ellipse at 30% 80%, rgba(212,137,122,0.10) 0%, transparent 50%);
+    }
+
     .hero {
       padding: 7rem 1.5rem 4rem;
     }
