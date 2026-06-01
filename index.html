@@ -182,6 +182,20 @@
   .hero-title em {
     font-style: italic; color: var(--gold);
   }
+  .hero-underline {
+    position: relative;
+    display: inline;
+  }
+  .hero-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 6px;
+    background: rgba(201, 146, 59, 0.25);
+    border-radius: 4px;
+  }
 
   .hero-sub {
     color: var(--muted); font-size: 1.05rem; max-width: 480px;
@@ -723,7 +737,7 @@
     <div class="badge-available fade-in"><span class="badge-star-wrap"><span class="badge-star-icon">✨</span></span> Available for clients</div>
     <h1 class="hero-title fade-in">
       <strong>Helping CEOs & Business Owners Reclaim Their Time</strong>
-      <em>With a Dedicated Executive Assistant</em>
+      <em>With a Dedicated Executive Assis<span class="hero-underline">tant</span></em>
     </h1>
     <p class="hero-sub fade-in">Reliable Executive Assistant offering organized, efficient, and proactive support from managing your inbox and schedule to handling administrative tasks with precision and care.</p>
     <div class="hero-btns fade-in">
