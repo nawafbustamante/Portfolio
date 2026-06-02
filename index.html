@@ -786,6 +786,18 @@
     .tool-icon-img img { width: 42px; height: 42px; }
     .tool-icon-label { font-size: 0.7rem; }
   }
+
+  /* ── TOOLS POP-IN ANIMATION ── */
+  .tool-icon-card {
+    opacity: 0;
+    transform: translateY(28px) scale(0.82);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: opacity, transform;
+  }
+  .tool-icon-card.tool-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 </style>
 </head>
 <body>
@@ -1334,6 +1346,48 @@
     el.classList.add("clicked");
     setTimeout(() => el.classList.remove("clicked"), 600);
   }
+</script>
+
+<!-- TOOLS POP-IN OBSERVER -->
+<script>
+  (function () {
+    var toolsSection = document.getElementById('tools');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-icon-card'));
+    var triggered = false;
+
+    function popCards() {
+      if (triggered) return;
+      triggered = true;
+      cards.forEach(function (card, i) {
+        setTimeout(function () {
+          card.classList.add('tool-visible');
+        }, i * 100);
+      });
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          popCards();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    if (toolsSection) {
+      observer.observe(toolsSection);
+    }
+
+    /* Fallback: if user loads page already scrolled to tools */
+    window.addEventListener('load', function () {
+      if (!triggered) {
+        var rect = toolsSection && toolsSection.getBoundingClientRect();
+        if (rect && rect.top < window.innerHeight) {
+          popCards();
+        }
+      }
+    });
+  })();
 </script>
 
 <!-- FOOTER -->
