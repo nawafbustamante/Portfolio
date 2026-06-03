@@ -414,6 +414,16 @@
 
   /* ── ABOUT ── */
   #about { background: var(--warm-white); }
+  .about-heading-br { display: block; }
+  @media (min-width: 769px) {
+    .about-text .section-label,
+    .about-text .section-title {
+      text-align: left;
+    }
+  }
+  @media (max-width: 768px) {
+    .about-heading-br { display: none; }
+  }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
   .stat-card {
@@ -937,7 +947,7 @@
   <div class="about-grid">
     <div class="about-text">
       <div class="section-label">About Me</div>
-      <h2 class="section-title">Your Dedicated Support Behind Every Productive Day</h2>
+      <h2 class="section-title about-heading-split">Your Dedicated<br class="about-heading-br"> Support Behind Every<br class="about-heading-br"> Productive Day</h2>
       <p class="section-sub" style="text-align:left; margin-left:0; margin-right:0;">Hi, I'm <strong>Nawaf Bustamante</strong>, a dedicated Executive Assistant passionate about helping busy professionals and business owners take back control of their time.</p>
       <p>I specialize in calendar management, email handling, data entry, meeting coordination, and day-to-day administrative support so you can stay focused on what truly matters.</p>
       <p>I bring reliability, attention to detail, and a proactive mindset to every task. When you work with me, you get a dependable partner who keeps your business organized and running smoothly.</p>
