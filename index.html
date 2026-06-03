@@ -90,7 +90,7 @@
   .badge-available {
     font-size: 0.82rem; color: var(--charcoal); font-weight: 600;
     display: inline-flex; align-items: center; gap: 0.55rem;
-    background: rgba(201,146,59,0.08); border: 1px solid var(--gold);
+    background: rgba(255,255,255,0.55); border: 1px solid rgba(201,146,59,0.3);
     padding: 0.35rem 1rem; border-radius: 2rem;
     margin-bottom: 1.4rem; width: fit-content;
   }
@@ -267,7 +267,7 @@
   }
 
   .btn-outline {
-    border: 1.5px solid var(--gold);
+    border: 1.5px solid rgba(201,146,59,0.35);
     color: var(--gold);
     background: #fff;
     padding: 0.9rem 2rem; border-radius: 2rem;
@@ -278,14 +278,17 @@
   }
   .btn-outline:hover {
     background: #fff;
-    border-color: var(--gold);
+    border-color: rgba(201,146,59,0.55);
     color: var(--gold);
     transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 0 12px 3px rgba(201,146,59,0.22);
+    box-shadow: 0 0 12px 3px rgba(201,146,59,0.12);
   }
   .btn-outline:active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,146,59,0.06);
     transform: scale(0.97);
-    box-shadow: 0 0 8px 2px rgba(201,146,59,0.18);
+    box-shadow: 0 0 14px 4px rgba(201,146,59,0.28);
   }
 
   .hero-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
