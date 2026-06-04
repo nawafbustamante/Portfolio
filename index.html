@@ -829,6 +829,16 @@
     .tool-icon-label { font-size: 0.7rem; }
   }
 
+  @media (max-width: 600px) {
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem 0.6rem;
+      justify-items: center;
+    }
+    .tool-icon-card { width: auto; }
+  }
+
   /* ── TOOLS POP-IN ANIMATION ── */
   .tool-icon-card {
     opacity: 0;
@@ -1089,6 +1099,7 @@
 
     <div class="tools-grid">
 
+
       <!-- Gmail -->
       <div class="tool-icon-card">
         <div class="tool-icon-img">
@@ -1137,6 +1148,156 @@
         <div class="tool-icon-label">Google Docs</div>
       </div>
 
+      <!-- Outlook -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 17639 17639" id="outlook">
+  <path fill="#1e70b6" d="M3502 12735V4798l6137-1111v10160l-6137-1112zm9657-952H9915l-2-2867 597 409c162 129 368 105 501 10l2399-1723 5 3859c-1 261 14 312-256 312zm-2623-3029-623-464V6844h2787c106-1 209 0 300 0 670-3 357 222 52 444l-2020 1470c-178 130-308 150-496-4zm-623-2651h3812c421 0 421 141 421 456v3763c0 199 0 261-211 261-212 0-212-54-211-246 0-12-1-27-1-36V6562H9913v-459zm-7832 9490h13493l1-13476-13494 1v13475z"></path>
+  <path fill="#1e70b6" d="M5669 9243c-357-1798 1435-2332 1698-831 331 1888-1421 2227-1698 831zm2230-424c0-965-422-1746-1355-1746-1391 0-1786 1874-1097 2950 277 432 1032 762 1694 395 473-262 758-852 758-1599z"></path>
+</svg>
+        </div>
+        <div class="tool-icon-label">MS Outlook</div>
+      </div>
+
+      <!-- MS Excel -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 17639 17639" id="excel">
+  <path fill="#1e7145" d="M9596 3634v10265l-6103-1058V4692l6103-1058zm290 1185h4053c224 0 267 44 267 267v7360c0 223-43 267-267 267H9886v-694h1547v-1066H9886v-320h1547V9566H9886v-320h1547V8179H9886v-320h1547V6793H9886v-320h1547V5406H9886v-587zM2083 15593h13474l2-13476H2081l2 13476z"></path>
+  <path fill="#1e7145" d="m7129 6861-556 1272-432-1195-695 31 690 1741-777 1703 683 51 548-1225 510 1296 786 43-852-1875 815-1894zM11753 12019h1760v-1066h-1760zM11753 10633h1760V9566h-1760zM11753 9246h1760V8179h-1760zM11753 6473h1760V5406h-1760zM11753 7859h1760V6793h-1760z"></path>
+</svg>
+        </div>
+        <div class="tool-icon-label">MS Excel</div>
+      </div>
+
+      <!-- MS Word -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 17639 17639" id="word">
+  <g id="Layer_x0020_1">
+    <path d="m3526 12823 5-8040 6100-1044v10125l-6105-1041zm9610-2714H9872v-632h3264v-421H9872v-631h3264v-421H9872v-632h3264v-421H9872v-632h3264v-421H9872l6-994h3951c212-8 255 34 247 247v7337c3 127-36 236-247 212H9878l-6-1117h3264v-421H9872v-632h3264v-421zM2081 15593h13512l-18-13494H2081v13494z" style="fill:#2b5797"></path>
+    <path d="m7766 6933-483 2594-500-2512-677 39-480 2382-406-2308-598 7 622 3342 628 34 516-2310 275 1171c80 398 161 779 235 1185l710 73 823-3722-665 25z" style="fill:#2b5797"></path>
+  </g>
+</svg>
+        </div>
+        <div class="tool-icon-label">MS Word</div>
+      </div>
+
+      <!-- MS Teams -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="4 4 36 38" id="microsoft-teams">
+  <path fill="url(#a)" d="M22 20h12a6 6 0 0 1 6 6v10a6 6 0 0 1-12 0V26a6 6 0 0 0-6-6Z"></path>
+  <path fill="url(#b)" d="M8 24a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v12a6 6 0 0 0 6 6H18c-5.523 0-10-4.477-10-10v-8Z"></path>
+  <path fill="url(#c)" fill-opacity=".7" d="M8 24a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v12a6 6 0 0 0 6 6H18c-5.523 0-10-4.477-10-10v-8Z"></path>
+  <path fill="url(#d)" fill-opacity=".7" d="M8 24a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v12a6 6 0 0 0 6 6H18c-5.523 0-10-4.477-10-10v-8Z"></path>
+  <path fill="url(#e)" d="M33 18a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"></path>
+  <path fill="url(#f)" fill-opacity=".46" d="M33 18a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"></path>
+  <path fill="url(#g)" fill-opacity=".4" d="M33 18a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"></path>
+  <path fill="url(#h)" d="M18 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+  <path fill="url(#i)" fill-opacity=".6" d="M18 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+  <path fill="url(#j)" fill-opacity=".5" d="M18 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+  <rect width="16" height="16" x="4" y="23" fill="url(#k)" rx="3.25"></rect>
+  <rect width="16" height="16" x="4" y="23" fill="url(#l)" fill-opacity=".7" rx="3.25"></rect>
+  <path fill="#fff" d="M15.48 28.105h-2.448v7.466h-2.065v-7.466H8.52V26.43h6.96v1.676Z"></path>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(13.4784 0 0 33.2694 39.797 22.174)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A98AFF"></stop>
+      <stop offset=".14" stop-color="#8C75FF"></stop>
+      <stop offset=".565" stop-color="#5F50E2"></stop>
+      <stop offset=".9" stop-color="#3C2CB8"></stop>
+    </radialGradient>
+    <radialGradient id="b" cx="0" cy="0" r="1" gradientTransform="matrix(12.1875 30.39997 -30.74442 12.3256 8.812 16.4)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#85C2FF"></stop>
+      <stop offset=".69" stop-color="#7588FF"></stop>
+      <stop offset="1" stop-color="#6459FE"></stop>
+    </radialGradient>
+    <radialGradient id="d" cx="0" cy="0" r="1" gradientTransform="rotate(113.326 8.093 17.645)scale(19.2186 15.4273)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BD96FF"></stop>
+      <stop offset=".687" stop-color="#BD96FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="e" cx="0" cy="0" r="1" gradientTransform="matrix(0 -10 12.6216 0 33 11.571)" gradientUnits="userSpaceOnUse">
+      <stop offset=".268" stop-color="#6868F7"></stop>
+      <stop offset="1" stop-color="#3923B1"></stop>
+    </radialGradient>
+    <radialGradient id="f" cx="0" cy="0" r="1" gradientTransform="matrix(5.47024 4.59847 -6.65117 7.91208 28.867 10.544)" gradientUnits="userSpaceOnUse">
+      <stop offset=".271" stop-color="#A1D3FF"></stop>
+      <stop offset=".813" stop-color="#A1D3FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="g" cx="0" cy="0" r="1" gradientTransform="rotate(-41.658 32.118 -43.42)scale(8.51275 20.8824)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3ACFD"></stop>
+      <stop offset=".816" stop-color="#9FA2FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientTransform="matrix(0 -12 15.146 0 18 8.286)" gradientUnits="userSpaceOnUse">
+      <stop offset=".268" stop-color="#8282FF"></stop>
+      <stop offset="1" stop-color="#3923B1"></stop>
+    </radialGradient>
+    <radialGradient id="i" cx="0" cy="0" r="1" gradientTransform="matrix(6.56424 5.51821 -7.98144 9.4944 13.04 7.053)" gradientUnits="userSpaceOnUse">
+      <stop offset=".271" stop-color="#A1D3FF"></stop>
+      <stop offset=".813" stop-color="#A1D3FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientTransform="rotate(-41.658 20.382 -26.516)scale(10.2153 25.0589)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3ACFD"></stop>
+      <stop offset=".816" stop-color="#9FA2FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="k" cx="0" cy="0" r="1" gradientTransform="rotate(45 -25.763 16.328)scale(22.6274)" gradientUnits="userSpaceOnUse">
+      <stop offset=".047" stop-color="#688EFF"></stop>
+      <stop offset=".947" stop-color="#230F94"></stop>
+    </radialGradient>
+    <radialGradient id="l" cx="0" cy="0" r="1" gradientTransform="matrix(0 11.2 -13.0702 0 12 32.6)" gradientUnits="userSpaceOnUse">
+      <stop offset=".571" stop-color="#6965F6" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#8F8FFF"></stop>
+    </radialGradient>
+    <linearGradient id="c" x1="20.594" x2="20.594" y1="18" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset=".801" stop-color="#6864F6" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#5149DE"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+        </div>
+        <div class="tool-icon-label">MS Teams</div>
+      </div>
+
+      <!-- Discord -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 100 100" viewBox="0 0 100 100" id="discord">
+  <path id="Layer_2" fill="#6665d2" d="M85.22,24.958c-11.459-8.575-22.438-8.334-22.438-8.334l-1.122,1.282
+			c13.623,4.087,19.954,10.097,19.954,10.097c-19.491-10.731-44.317-10.654-64.59,0c0,0,6.571-6.331,20.996-10.418l-0.801-0.962
+			c0,0-10.899-0.24-22.438,8.334c0,0-11.54,20.755-11.54,46.319c0,0,6.732,11.54,24.442,12.101c0,0,2.965-3.526,5.369-6.571
+			c-10.177-3.045-14.024-9.376-14.024-9.376c6.394,4.001,12.859,6.505,20.916,8.094c13.108,2.698,29.413-0.076,41.591-8.094
+			c0,0-4.007,6.491-14.505,9.456c2.404,2.965,5.289,6.411,5.289,6.411c17.71-0.561,24.441-12.101,24.441-12.02
+			C96.759,45.713,85.22,24.958,85.22,24.958z M35.055,63.824c-4.488,0-8.174-3.927-8.174-8.815
+			c0.328-11.707,16.102-11.671,16.348,0C43.229,59.897,39.622,63.824,35.055,63.824z M64.304,63.824
+			c-4.488,0-8.174-3.927-8.174-8.815c0.36-11.684,15.937-11.689,16.348,0C72.478,59.897,68.872,63.824,64.304,63.824z"></path>
+</svg>
+        </div>
+        <div class="tool-icon-label">Discord</div>
+      </div>
+
+      <!-- Trello -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 256 256"><defs><linearGradient id="logosTrello0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#0091E6"/><stop offset="100%" stop-color="#0079BF"/></linearGradient></defs><rect width="256" height="256" fill="url(#logosTrello0)" rx="25"/><rect width="78.08" height="112" x="144.64" y="33.28" fill="#ffffff" rx="12"/><rect width="78.08" height="176" x="33.28" y="33.28" fill="#ffffff" rx="12"/></svg>
+        </div>
+        <div class="tool-icon-label">Trello</div>
+      </div>
+
+      <!-- Slack -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="slack">
+  <path fill="#e91e63" d="M8.843 12.651c-1.392 0-2.521 1.129-2.521 2.521v6.306c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.306c-.001-1.392-1.13-2.521-2.521-2.521zM.019 15.172c0 1.393 1.13 2.523 2.523 2.523s2.523-1.13 2.523-2.523v-2.523h-2.521c-.001 0-.001 0-.002 0-1.393 0-2.523 1.13-2.523 2.523z"></path>
+  <path fill="#00bcd4" d="M8.846-.001c-.001 0-.002 0-.003 0-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h2.521v-2.523c0-.001 0-.003 0-.005-.001-1.391-1.128-2.518-2.518-2.518zM2.525 11.37h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523z"></path>
+  <path fill="#4caf50" d="M21.457 6.323c-1.391 0-2.518 1.127-2.518 2.518v.005 2.523h2.521c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523c-.001 0-.002 0-.003 0zM12.641 2.522v6.325c0 1.392 1.129 2.521 2.521 2.521s2.521-1.129 2.521-2.521v-6.325c0-1.392-1.129-2.521-2.521-2.521-1.392 0-2.521 1.129-2.521 2.521z"></path>
+  <g fill="#ff9800">
+    <path d="M17.682 21.476c0-1.392-1.129-2.521-2.521-2.521h-2.521v2.523c.001 1.391 1.129 2.519 2.521 2.519s2.521-1.129 2.521-2.521zM21.479 12.649h-6.318c-1.393 0-2.523 1.13-2.523 2.523s1.13 2.523 2.523 2.523h6.318c1.393 0 2.523-1.13 2.523-2.523s-1.13-2.523-2.523-2.523z"></path>
+  </g>
+</svg>
+        </div>
+        <div class="tool-icon-label">Slack</div>
+      </div>
+
       <!-- Zoom -->
       <div class="tool-icon-card">
         <div class="tool-icon-img">
@@ -1153,22 +1314,6 @@
         <div class="tool-icon-label">Calendly</div>
       </div>
 
-      <!-- Microsoft Office -->
-      <div class="tool-icon-card">
-        <div class="tool-icon-img">
-          <svg viewBox="-212.4 0 2499.8 2499.8" enable-background="new 0 0 2075 2499.8" xmlns="http://www.w3.org/2000/svg"><path d="m0 2016.6v-1519.8l1344.4-496.8 730.6 233.7v2045.9l-730.6 220.3-1344.4-483.3 1344.4 161.8v-1769.2l-876.8 204.6v1198.3z" fill="#eb3c00"></path></svg>
-        </div>
-        <div class="tool-icon-label">Microsoft Office</div>
-      </div>
-
-      <!-- Trello -->
-      <div class="tool-icon-card">
-        <div class="tool-icon-img">
-          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 256 256"><defs><linearGradient id="logosTrello0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#0091E6"/><stop offset="100%" stop-color="#0079BF"/></linearGradient></defs><rect width="256" height="256" fill="url(#logosTrello0)" rx="25"/><rect width="78.08" height="112" x="144.64" y="33.28" fill="#ffffff" rx="12"/><rect width="78.08" height="176" x="33.28" y="33.28" fill="#ffffff" rx="12"/></svg>
-        </div>
-        <div class="tool-icon-label">Trello</div>
-      </div>
-
       <!-- ChatGPT -->
       <div class="tool-icon-card">
         <div class="tool-icon-img">
@@ -1183,6 +1328,16 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 256 257"><path fill="#D97757" d="m50.228 170.321l50.357-28.257l.843-2.463l-.843-1.361h-2.462l-8.426-.518l-28.775-.778l-24.952-1.037l-24.175-1.296l-6.092-1.297L0 125.796l.583-3.759l5.12-3.434l7.324.648l16.202 1.101l24.304 1.685l17.629 1.037l26.118 2.722h4.148l.583-1.685l-1.426-1.037l-1.101-1.037l-25.147-17.045l-27.22-18.017l-14.258-10.37l-7.713-5.25l-3.888-4.925l-1.685-10.758l7-7.713l9.397.649l2.398.648l9.527 7.323l20.35 15.75L94.817 91.9l3.889 3.24l1.555-1.102l.195-.777l-1.75-2.917l-14.453-26.118l-15.425-26.572l-6.87-11.018l-1.814-6.61c-.648-2.723-1.102-4.991-1.102-7.778l7.972-10.823L71.42 0l10.63 1.426l4.472 3.888l6.61 15.101l10.694 23.786l16.591 32.34l4.861 9.592l2.592 8.879l.973 2.722h1.685v-1.556l1.36-18.211l2.528-22.36l2.463-28.776l.843-8.1l4.018-9.722l7.971-5.25l6.222 2.981l5.12 7.324l-.713 4.73l-3.046 19.768l-5.962 30.98l-3.889 20.739h2.268l2.593-2.593l10.499-13.934l17.628-22.036l7.778-8.749l9.073-9.657l5.833-4.601h11.018l8.1 12.055l-3.628 12.443l-11.342 14.388l-9.398 12.184l-13.48 18.147l-8.426 14.518l.778 1.166l2.01-.194l30.46-6.481l16.462-2.982l19.637-3.37l8.88 4.148l.971 4.213l-3.5 8.62l-20.998 5.184l-24.628 4.926l-36.682 8.685l-.454.324l.519.648l16.526 1.555l7.065.389h17.304l32.21 2.398l8.426 5.574l5.055 6.805l-.843 5.184l-12.962 6.611l-17.498-4.148l-40.83-9.721l-14-3.5h-1.944v1.167l11.666 11.406l21.387 19.314l26.767 24.887l1.36 6.157l-3.434 4.86l-3.63-.518l-23.526-17.693l-9.073-7.972l-20.545-17.304h-1.36v1.814l4.73 6.935l25.017 37.59l1.296 11.536l-1.814 3.76l-6.481 2.268l-7.13-1.297l-14.647-20.544l-15.1-23.138l-12.185-20.739l-1.49.843l-7.194 77.448l-3.37 3.953l-7.778 2.981l-6.48-4.925l-3.436-7.972l3.435-15.749l4.148-20.544l3.37-16.333l3.046-20.285l1.815-6.74l-.13-.454l-1.49.194l-15.295 20.999l-23.267 31.433l-18.406 19.702l-4.407 1.75l-7.648-3.954l.713-7.064l4.277-6.286l25.47-32.405l15.36-20.092l9.917-11.6l-.065-1.686h-.583L44.07 198.125l-12.055 1.555l-5.185-4.86l.648-7.972l2.463-2.593l20.35-13.999z"/></svg>
         </div>
         <div class="tool-icon-label">Claude AI</div>
+      </div>
+
+      <!-- PicsArt -->
+      <div class="tool-icon-card">
+        <div class="tool-icon-img">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#C209C1" viewBox="0 0 24 24" id="picsart">
+  <path d="M11.999 0h-.012c-2.21 0-4.3.863-5.888 2.432-.15.148-.428.458-.428.458-.096.11-.188.22-.276.334l-.036.047a8.683 8.683 0 0 0-1.836 5.016v15.41a.32.32 0 0 0 .05.17.304.304 0 0 0 .254.133h2.881a.303.303 0 0 0 .305-.304v-7.843c0-.054.037-.08.053-.087a.1.1 0 0 1 .104.008 8.293 8.293 0 0 0 4.815 1.525c1.32 0 2.547-.305 3.68-.86 2.847-1.392 4.812-4.356 4.812-7.793 0-4.78-3.796-8.645-8.478-8.645zm-.013 13.994c-2.841 0-5.152-2.396-5.152-5.34 0-2.946 2.31-5.342 5.152-5.342 2.841 0 5.152 2.396 5.152 5.341 0 2.945-2.31 5.341-5.152 5.341z"></path>
+</svg>
+        </div>
+        <div class="tool-icon-label">PicsArt</div>
       </div>
 
       <!-- Canva -->
