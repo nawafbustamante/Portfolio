@@ -877,6 +877,10 @@
   .lb-nav-next { right: clamp(12px, 3vw, 52px); }
   .lb-nav-btn svg { display: block; pointer-events: none; }
 
+  @media (max-width: 768px) {
+    .lb-nav-btn { display: none !important; }
+  }
+
   /* ── LIGHTBOX DOTS ── */
   .lb-dots {
     position: absolute;
@@ -1524,12 +1528,13 @@
     lbImg.src = _lbImages[_lbIndex].src;
     lbImg.alt = _lbImages[_lbIndex].alt;
 
-    // Show/hide arrows
+    // Show/hide arrows (desktop only; CSS hides them on mobile)
     var multi = total > 1;
     prevBtn.style.display = multi ? 'flex' : 'none';
     nextBtn.style.display = multi ? 'flex' : 'none';
 
     // Counter
+    var multi = total > 1;
     counter.textContent = multi ? (_lbIndex + 1) + ' / ' + total : '';
 
     // Rebuild dots
@@ -1582,6 +1587,27 @@
     if (e.key === 'ArrowLeft')   lbMove(-1);
     if (e.key === 'ArrowRight')  lbMove(1);
   });
+
+  // Touch/swipe navigation for mobile
+  (function() {
+    var overlay = document.getElementById('lightbox-overlay');
+    var _touchStartX = 0;
+    var _touchStartY = 0;
+
+    overlay.addEventListener('touchstart', function(e) {
+      _touchStartX = e.touches[0].clientX;
+      _touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - _touchStartX;
+      var dy = e.changedTouches[0].clientY - _touchStartY;
+      // Only register horizontal swipe if it's more horizontal than vertical
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      if (_lbImages.length < 2) return;
+      lbMove(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  })();
 </script>
 
 <hr class="divider"/>
