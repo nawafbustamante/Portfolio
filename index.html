@@ -92,7 +92,7 @@
     transition: stroke 0.3s;
   }
   .hiw-step-card:hover .hiw-step-icon {
-    transform: scale(1.12) rotate(4deg);
+    transform: scale(1.06) rotate(4deg);
     background: var(--gold);
     border-color: var(--gold);
   }
@@ -1081,20 +1081,7 @@
   .lb-nav-btn svg { display: block; pointer-events: none; }
 
   @media (max-width: 768px) {
-    .lb-nav-btn {
-      width: 2.5rem; height: 2.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .lb-nav-btn:active {
-      background: var(--gold);
-      border-color: var(--gold);
-      transform: translateY(-50%) scale(0.93);
-    }
-    .lb-nav-prev { left: 0.6rem; }
-    .lb-nav-next { right: 0.6rem; }
+    .lb-nav-btn { display: none !important; }
   }
 
   /* ── LIGHTBOX DOTS ── */
