@@ -1082,29 +1082,19 @@
 
   @media (max-width: 768px) {
     .lb-nav-btn {
-      display: flex !important;
-      top: auto !important;
-      bottom: 3.8rem;
-      transform: none !important;
-      width: 52px; height: 52px;
-      background: rgba(255,255,255,0.15);
-      border: 1.5px solid rgba(255,255,255,0.35);
-      border-radius: 50%;
+      width: 2.5rem; height: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
     }
     .lb-nav-btn:active {
-      transform: scale(0.92) !important;
       background: var(--gold);
       border-color: var(--gold);
+      transform: translateY(-50%) scale(0.93);
     }
-    .lb-nav-prev {
-      left: calc(50% - 68px) !important;
-    }
-    .lb-nav-next {
-      right: calc(50% - 68px) !important;
-    }
-    .lb-dots {
-      bottom: 1rem;
-    }
+    .lb-nav-prev { left: 0.6rem; }
+    .lb-nav-next { right: 0.6rem; }
   }
 
   /* ── LIGHTBOX DOTS ── */
