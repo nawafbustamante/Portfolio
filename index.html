@@ -1081,7 +1081,30 @@
   .lb-nav-btn svg { display: block; pointer-events: none; }
 
   @media (max-width: 768px) {
-    .lb-nav-btn { display: none !important; }
+    .lb-nav-btn {
+      display: flex !important;
+      top: auto !important;
+      bottom: 3.8rem;
+      transform: none !important;
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 50%;
+    }
+    .lb-nav-btn:active {
+      transform: scale(0.92) !important;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .lb-nav-prev {
+      left: calc(50% - 68px) !important;
+    }
+    .lb-nav-next {
+      right: calc(50% - 68px) !important;
+    }
+    .lb-dots {
+      bottom: 1rem;
+    }
   }
 
   /* ── LIGHTBOX DOTS ── */
