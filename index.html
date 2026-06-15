@@ -543,7 +543,7 @@
   /* floating label on hero image */
   .hero-img-label {
     position: absolute;
-    bottom: -10px; right: -18px;
+    bottom: 20px; right: -30px;
     z-index: 3;
     background: var(--gold);
     color: var(--charcoal);
@@ -557,11 +557,34 @@
   .hero-img-label-text {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.85rem; font-weight: 700;
-    color: var(--charcoal); line-height: 1.3;
+    color: #fff; line-height: 1.3;
     letter-spacing: 0.01em;
     text-align: center;
   }
   @keyframes floatLabel {
+    0%,100% { transform: translateY(0px); box-shadow: 0 6px 24px rgba(201,146,59,0.4), 0 2px 8px rgba(28,26,24,0.15); }
+    50%      { transform: translateY(-8px); box-shadow: 0 14px 32px rgba(201,146,59,0.35), 0 4px 12px rgba(28,26,24,0.10); }
+  }
+
+  /* Admin Support badge — top-left of profile image */
+  .hero-img-label-top {
+    position: absolute;
+    top: 36px; left: -48px;
+    z-index: 3;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 6px 24px rgba(201,146,59,0.4), 0 2px 8px rgba(28,26,24,0.15);
+    display: flex; align-items: center; justify-content: center;
+    animation: floatLabelTop 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+    min-width: 140px;
+  }
+  .hero-img-label-top .hero-img-label-text {
+    color: #fff;
+  }
+  @keyframes floatLabelTop {
     0%,100% { transform: translateY(0px); box-shadow: 0 6px 24px rgba(201,146,59,0.4), 0 2px 8px rgba(28,26,24,0.15); }
     50%      { transform: translateY(-8px); box-shadow: 0 14px 32px rgba(201,146,59,0.35), 0 4px 12px rgba(28,26,24,0.10); }
   }
@@ -1365,6 +1388,9 @@
         <div class="hero-img-frame">
           <img src="profile.jpg" alt="" class="hero-img"/>
         </div>
+        <div class="hero-img-label-top">
+          <div class="hero-img-label-text">Admin Support</div>
+        </div>
         <div class="hero-img-label">
           <div class="hero-img-label-text">Executive Assistants</div>
         </div>
@@ -1377,6 +1403,9 @@
       <div class="hero-img-bg"></div>
       <div class="hero-img-frame">
         <img src="profile.jpg" alt="" class="hero-img"/>
+      </div>
+      <div class="hero-img-label-top">
+        <div class="hero-img-label-text">Admin Support</div>
       </div>
       <div class="hero-img-label">
           <div class="hero-img-label-text">Executive Assistants</div>
